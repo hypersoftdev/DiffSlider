@@ -2,7 +2,7 @@
 
 # DiffSlider
 
-**DiffSlider** is a customizable Android library designed to enhance user interaction by providing an intuitive draggable color picker. This view allows users to select colors from the underlying layout dynamically, making it perfect for applications that require color customization, such as design tools and art applications.
+**DiffSlider** This Kotlin library enables intuitive side-by-side image comparison through a responsive slider interface. Designed to be lightweight and user-friendly, it allows users to visually compare two images by dragging a slider across the screen. Ideal for showcasing before-and-after effects, this library is simple to integrate into Android projects and provides smooth performance for a seamless user experience.
 
 ## Gradle Integration
 
@@ -19,7 +19,7 @@ repositories {
 
 ### Step B: Add Dependencies
 
-Include the **ColorPicker** library in your **app-level** `build.gradle` file. Replace `x.x.x` with the latest version: [![](https://jitpack.io/v/hypersoftdev/DiffSlider.svg)](https://jitpack.io/#hypersoftdev/DiffSlider)
+Include the **DiffSlider** library in your **app-level** `build.gradle` file. Replace `x.x.x` with the latest version: [![](https://jitpack.io/v/hypersoftdev/DiffSlider.svg)](https://jitpack.io/#hypersoftdev/DiffSlider)
 
 Groovy Version
 ```
@@ -35,63 +35,36 @@ Kts Version
 ### XML Example:
 
 ```
-  <com.hyeprsoft.picker.ColorPickerView
-        android:id="@+id/color_picker"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+ <com.hypersoft.compareimageslider.CompareImageSlider
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        app:background_image="@drawable/background"
+        app:foreground_image="@drawable/foreground"
+        app:slider_icon="@drawable/ic_seekbar_thumb"
+        app:showComparisonText="false"
+        app:showComparisonBar="true"
+        app:comparisonBarColor="@color/black"
+        app:textBackground="@drawable/image_compare_slider_text_bg"
+        app:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:strokeColor="@color/white"
-        app:changeStrokeColor="true"
-        app:strokeWidth="15dp"
-        app:circleRadius="40dp"
         />
-```
-
-### Java/Kotlin
-
-### 1. Attach Listener to get real time information
-
-Implement OnColorChangeListener in your activity/fragment where you are using ColorPickerView and implement its method.
-
-```
-  -> fun onColorChanged(color: Int)
-  -> fun onHexColorChanged(hexColor: String)
-
-```
-
-### 2. Change ColorPickerView color
-
-Apply your desire color to colorpickerview:
-
-
-```
-val color = ContextCompat.getColor(this,R.color.black)
-colorPicker.setStrokeColor(color)
-
-```
-
-### 3. Set ColorPickerView Radius
-
-Change Radius the view: ( min 30f & max 200f)
-
-```
- colorPicker.setCircleRadius(50f)
-
 ```
 
 
 ## Attribute Summary
 
-| Attribute                        | Format    | Description                                        |
-|----------------------------------|-----------|----------------------------------------------------|
-| `strokeColor `                   | color     | Set stroke color of the colorpickerview.           |
-| `changeStrokeColor`              | boolean   | Change real time stroke color during picking color |
-| `strokeWidth`                    | dimension | Change stroke width of colorpickerview.            |
-| `circleRadius`                   | dimension | Change circle radius.                              |
-| `outerCircleColor`               | color     | Change outerCircle Color.                          |
+| Attribute            | Format  | Description                           |
+|----------------------|---------|---------------------------------------|
+| `background_image `  | Int     | Set background image for comparison.  |
+| `foreground_image`   | Int     | Set foreground image for comparison.  |
+| `slider_icon`        | Int     | Change slider thumbnail icon.         |
+| `showComparisonText` | boolean | Set before after text visibility.     |
+| `comparisonBarColor` | boolean | Set comparison bar visibility.        |
+| `textBackground`     | Int     | Change before-after text background.  |
+| `textColor `         | color   | Change before after text color.       |
 
 
 ## Screen Sample
