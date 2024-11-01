@@ -73,7 +73,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/before_label"
+        android:id="@+id/before_after_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="7dp"

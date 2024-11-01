@@ -11,6 +11,7 @@ import android.view.ViewGroup
 import android.widget.SeekBar
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.content.res.TypedArrayUtils.getResourceId
 import com.hypersoft.compareimageslider.databinding.CompareImageSliderBinding
 
 
@@ -39,33 +40,15 @@ class CompareImageSlider @JvmOverloads constructor(
         try {
 
 
+            setBackgroundImage(styledAttrs.getResourceId(R.styleable.CompareImageSlider_background_image,0))
+            setForegroundImage(styledAttrs.getResourceId(R.styleable.CompareImageSlider_foreground_image,0))
+            setSliderIcon(styledAttrs.getResourceId(R.styleable.CompareImageSlider_slider_icon, 0))
+            setTextColor(styledAttrs.getColor(R.styleable.CompareImageSlider_textColor, Color.BLACK))
+            setTextBackgroundColor(styledAttrs.getResourceId(R.styleable.CompareImageSlider_textBackground, android.R.color.transparent))
+            showComparisonText(styledAttrs.getBoolean(R.styleable.CompareImageSlider_showComparisonText, true))
+            showComparisonBar(styledAttrs.getBoolean(R.styleable.CompareImageSlider_showComparisonBar, true))
+            changeComparisonBarColor(styledAttrs.getColor(R.styleable.CompareImageSlider_comparisonBarColor, Color.WHITE))
 
-            val drawableBackground =
-                styledAttrs.getResourceId(R.styleable.CompareImageSlider_background_image, 0)
-            if (drawableBackground != 0) {
-                val drawable = AppCompatResources.getDrawable(context, drawableBackground)
-                binding.backgroundImage.setImageDrawable(drawable)
-            }
-
-            val drawableForeground =
-                styledAttrs.getResourceId(R.styleable.CompareImageSlider_foreground_image, 0)
-            if (drawableForeground != 0) {
-                val drawable = AppCompatResources.getDrawable(context, drawableForeground)
-                binding.foregroundImage.setImageDrawable(drawable)
-            }
-
-            val drawableSliderIcon =
-                styledAttrs.getResourceId(R.styleable.CompareImageSlider_slider_icon, 0)
-            if (drawableSliderIcon != 0) {
-                val drawable = AppCompatResources.getDrawable(context, drawableSliderIcon)
-                binding.sliderImage.setImageDrawable(drawable)
-            }
-
-            val textColor = styledAttrs.getColor(R.styleable.CompareImageSlider_textColor, Color.BLACK)
-            val textBackground = styledAttrs.getResourceId(R.styleable.CompareImageSlider_textBackground, android.R.color.transparent)
-
-            binding.beforeLabel.setTextColor(textColor)
-            binding.beforeLabel.setBackgroundResource(textBackground)
 
         } finally {
             styledAttrs.recycle()
@@ -76,7 +59,6 @@ class CompareImageSlider @JvmOverloads constructor(
         binding.sbImageSeek.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
                 setImageWidth(progress)
-                setTextPosition(progress)
             }
 
             override fun onStartTrackingTouch(seekBar: SeekBar) {}
@@ -100,6 +82,79 @@ class CompareImageSlider @JvmOverloads constructor(
 
 
 
+    private fun setBackgroundImage (drawableBackground:Int)
+    {
+        if (drawableBackground != 0) {
+            val drawable = AppCompatResources.getDrawable(context, drawableBackground)
+            binding.backgroundImage.setImageDrawable(drawable)
+        }
+    }
+
+    private fun setForegroundImage (drawableForeground:Int)
+    {
+        if (drawableForeground != 0) {
+            val drawable = AppCompatResources.getDrawable(context, drawableForeground)
+            binding.foregroundImage.setImageDrawable(drawable)
+        }
+    }
+
+    private fun setSliderIcon (drawableSliderIcon:Int)
+    {
+        if (drawableSliderIcon != 0) {
+            val drawable = AppCompatResources.getDrawable(context, drawableSliderIcon)
+            binding.sliderImage.setImageDrawable(drawable)
+        }
+    }
+
+    private fun setTextColor (textColor:Int)
+    {
+        binding.beforeAfterLabel.setTextColor(textColor)
+
+    }
+
+    private fun setTextBackgroundColor (textColor:Int)
+    {
+        binding.beforeAfterLabel.setTextColor(textColor)
+
+    }
+
+    private fun showComparisonText (show:Boolean)
+    {
+        if(show)
+        {
+            binding.beforeAfterLabel.visibility=View.VISIBLE
+        }else
+        {
+            binding.beforeAfterLabel.visibility=View.GONE
+
+        }
+    }
+
+    private fun showComparisonBar (show:Boolean)
+    {
+        if(show)
+        {
+            binding.sliderImage.visibility=View.VISIBLE
+            binding.sliderBar.visibility=View.VISIBLE
+        }else
+        {
+            binding.sliderImage.visibility=View.GONE
+            binding.sliderBar.visibility=View.GONE
+
+        }
+    }
+
+    private fun changeComparisonBarColor (color:Int)
+    {
+        binding.sliderBar.setBackgroundColor(color)
+    }
+
+
+//    private fun applySettings ()
+//    {
+//        binding.beforeLabel.setTextColor(textColor)
+//        binding.beforeLabel.setBackgroundResource(textBackground)
+//    }
 
     private fun setImageWidth(progress: Int) {
         if (progress <= 0) return
@@ -108,26 +163,5 @@ class CompareImageSlider @JvmOverloads constructor(
         binding.target.layoutParams = lp
     }
 
-    private fun setTextPosition (progress: Int)
-    {
-
-//        if(progress< (binding.sbImageSeek.max)/2)
-//        {
-//            val beforeLabelParams = binding.beforeLabel.layoutParams as MarginLayoutParams
-//            beforeLabelParams.marginEnd = progress
-//            binding.beforeLabel.layoutParams = beforeLabelParams
-//        }else
-//        {
-//            val beforeLabelParams = binding.beforeLabel.layoutParams as MarginLayoutParams
-//            beforeLabelParams.marginStart = progress
-//            binding.beforeLabel.layoutParams = beforeLabelParams
-//        }
-
-//        val beforeLabelParams = binding.beforeLabel.layoutParams as MarginLayoutParams
-//        beforeLabelParams.marginStart = progress - binding.beforeLabel.width/2 - binding.sliderBar.width
-//        binding.beforeLabel.layoutParams = beforeLabelParams
-
-
-    }
 
 }
