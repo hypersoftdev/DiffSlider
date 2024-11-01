@@ -112,9 +112,9 @@ class CompareImageSlider @JvmOverloads constructor(
 
     }
 
-    private fun setTextBackgroundColor (textColor:Int)
+    private fun setTextBackgroundColor (textBackground:Int)
     {
-        binding.beforeAfterLabel.setTextColor(textColor)
+        binding.beforeAfterLabel.setBackgroundResource(textBackground)
 
     }
 
@@ -149,12 +149,6 @@ class CompareImageSlider @JvmOverloads constructor(
         binding.sliderBar.setBackgroundColor(color)
     }
 
-
-//    private fun applySettings ()
-//    {
-//        binding.beforeLabel.setTextColor(textColor)
-//        binding.beforeLabel.setBackgroundResource(textBackground)
-//    }
 
     private fun setImageWidth(progress: Int) {
         if (progress <= 0) return

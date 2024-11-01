@@ -19,7 +19,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:slider_icon="@drawable/ic_seekbar_thumb"
-        app:showComparisonText="false"
+        app:showComparisonText="true"
         app:showComparisonBar="true"
         app:comparisonBarColor="@color/black"
         app:textBackground="@drawable/image_compare_slider_text_bg"
