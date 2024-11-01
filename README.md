@@ -43,6 +43,7 @@ Kts Version
         app:slider_icon="@drawable/ic_seekbar_thumb"
         app:showComparisonText="false"
         app:showComparisonBar="true"
+        app:showComparisonBar="true"
         app:comparisonBarColor="@color/black"
         app:textBackground="@drawable/image_compare_slider_text_bg"
         app:textColor="@color/black"
@@ -56,15 +57,16 @@ Kts Version
 
 ## Attribute Summary
 
-| Attribute            | Format  | Description                           |
-|----------------------|---------|---------------------------------------|
-| `background_image `  | Int     | Set background image for comparison.  |
-| `foreground_image`   | Int     | Set foreground image for comparison.  |
-| `slider_icon`        | Int     | Change slider thumbnail icon.         |
-| `showComparisonText` | boolean | Set before after text visibility.     |
-| `comparisonBarColor` | boolean | Set comparison bar visibility.        |
-| `textBackground`     | Int     | Change before-after text background.  |
-| `textColor `         | color   | Change before after text color.       |
+| Attribute            | Format  | Description                          |
+|----------------------|---------|--------------------------------------|
+| `background_image `  | Int     | Set background image for comparison. |
+| `foreground_image`   | Int     | Set foreground image for comparison. |
+| `slider_icon`        | Int     | Change slider thumbnail icon.        |
+| `showComparisonText` | boolean | Set before after text visibility.    |
+| `comparisonBarColor` | color   | Change comparison bar color.         |
+| `showComparisonBar ` | boolean | Set comparison bar visibility.       |
+| `textBackground`     | Int     | Change before-after text background. |
+| `textColor `         | color   | Change before after text color.      |
 
 
 ## Screen Sample
