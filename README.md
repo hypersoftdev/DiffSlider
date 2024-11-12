@@ -136,13 +136,13 @@ Sets the width of the slider bar in pixels.
 | `background_image` | reference | Set background image for comparison. |
 | `foreground_image` | reference | Set foreground image for comparison. |
 | `slider_icon`      | reference | Change slider thumbnail icon.        |
-| `before_text`      | string    | Set before after text visibility.    |
-| `after_text`       | string    | Change comparison bar color.         |
-| `text_color `      | color     | Set comparison bar visibility.       |
-| `text_size`        | dimension | Change before-after text background. |
-| `text_background`  | reference | Change before after text color.      |
-| `slider_bar_color` | color     | Change before after text color.      |
-| `slider_bar_width` | dimension | Change before after text color.      |
+| `before_text`      | string    | Set before text.                     |
+| `after_text`       | string    | Set after text.                      |
+| `text_color `      | color     | Set before-after text color.         |
+| `text_size`        | dimension | Set before-after text size.          |
+| `text_background`  | reference | Change before-after text background. |
+| `slider_bar_color` | color     | Change comparison slider bar color.  |
+| `slider_bar_width` | dimension | Change comparison slider bar width.  |
 
 ## Screen Sample
 
