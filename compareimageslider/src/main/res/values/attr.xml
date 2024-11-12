@@ -1,13 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="CompareImageSlider">
+        <!-- Background Image for the Image Compare Slider -->
         <attr name="background_image" format="reference" />
+
+        <!-- Foreground Image for the Image Compare Slider -->
         <attr name="foreground_image" format="reference" />
+
+        <!-- Slider Icon Image -->
         <attr name="slider_icon" format="reference" />
-        <attr name="textColor" format="color" />
-        <attr name="textBackground" format="reference" />
-        <attr name="showComparisonText" format="boolean" />
-        <attr name="showComparisonBar" format="boolean" />
-        <attr name="comparisonBarColor" format="color" />
+
+        <!-- Before Text -->
+        <attr name="before_text" format="string" />
+
+        <!-- After Text -->
+        <attr name="after_text" format="string" />
+
+        <!-- Text Color for Before and After Labels -->
+        <attr name="text_color" format="color" />
+
+        <!-- Text Size for Before and After Labels -->
+        <attr name="text_size" format="dimension" />
+
+        <!-- Background Drawable for Before and After Text -->
+        <attr name="text_background" format="reference" />
+
+        <!-- Slider Bar Color -->
+        <attr name="slider_bar_color" format="color" />
+
+        <!-- Slider Bar Width -->
+        <attr name="slider_bar_width" format="dimension" />
     </declare-styleable>
 </resources>

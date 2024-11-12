@@ -1,5 +1,4 @@
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,21 +7,21 @@
     <ImageView
         android:id="@+id/background_image"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:adjustViewBounds="true"
-        android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
+
+
     <FrameLayout
         android:id="@+id/target"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -30,59 +29,56 @@
             android:id="@+id/foreground_image"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
-            android:scaleType="fitXY" />
+            android:adjustViewBounds="true" />
     </FrameLayout>
+
+
+    <TextView
+        android:id="@+id/before_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/background_image"
+        app:layout_constraintEnd_toStartOf="@id/slider_bar"
+        android:padding="6dp"
+        android:layout_margin="10dp" />
+
+    <TextView
+        android:id="@+id/after_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/background_image"
+        app:layout_constraintStart_toEndOf="@id/slider_bar"
+        android:padding="6dp"
+        android:layout_margin="10dp" />
 
 
     <View
         android:id="@+id/slider_bar"
-        android:layout_width="2dp"
+        android:layout_width="4dp"
         android:layout_height="0dp"
         android:background="@android:color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/background_image"
-        app:layout_constraintEnd_toEndOf="@id/target"
-        app:layout_constraintTop_toTopOf="@+id/background_image" />
+        app:layout_constraintBottom_toBottomOf="@id/target"
+        app:layout_constraintStart_toEndOf="@+id/target"
+        app:layout_constraintTop_toTopOf="@id/target" />
 
     <ImageButton
         android:id="@+id/slider_image"
         android:layout_width="64dp"
         android:layout_height="64dp"
+        android:layout_marginEnd="4dp"
         android:background="@android:color/transparent"
-        app:layout_constraintStart_toStartOf="@id/slider_bar"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/slider_bar"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        />
-
-    <SeekBar
-        android:id="@+id/sbImageSeek"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:background="#00ffffff"
-        android:max="564"
-        android:paddingStart="0dp"
-        android:paddingEnd="0dp"
-        android:progress="800"
-        android:progressDrawable="@android:color/transparent"
-        android:splitTrack="false"
-        android:thumb="@android:color/transparent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@id/slider_bar"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/before_after_label"
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="7dp"
-        android:text="Before After"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@id/slider_bar"
-        app:layout_constraintEnd_toEndOf="@id/slider_bar"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="10dp"
-        />
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.70" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

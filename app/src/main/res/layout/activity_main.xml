@@ -19,11 +19,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:slider_icon="@drawable/ic_seekbar_thumb"
-        app:showComparisonText="true"
-        app:showComparisonBar="true"
-        app:comparisonBarColor="@color/black"
-        app:textBackground="@drawable/image_compare_slider_text_bg"
-        app:textColor="@color/black" />
+        app:before_text="Before"
+        app:after_text="After"
+        app:text_size="10dp"
+        app:text_color="@color/black"
+        app:slider_bar_width="4dp"
+        app:slider_bar_color="@color/black"
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
