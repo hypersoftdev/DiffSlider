@@ -146,7 +146,8 @@ Sets the width of the slider bar in pixels.
 
 ## Screen Sample
 
-![Sample](https://github.com/hypersoftdev/ColorPicker/blob/master/screens/screengif.gif?raw=true)
+![screen_demo](https://github.com/user-attachments/assets/72401c0b-0966-496e-981b-464e5bda050d)
+
 
 # Acknowledgements
 
